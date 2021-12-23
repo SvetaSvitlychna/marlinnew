@@ -2,7 +2,6 @@
 session_start();
 
 
-//var_dump($_FILES);die;
 for ($i = 0; $i<count($_FILES['image']['name']); $i++){
     uploads_file($_FILES['image']['name'][$i], $_FILES['image']['tmp_name'][$i]);
 }
@@ -46,7 +45,5 @@ function delete_file($data)
 
 }
 delete_file($_GET['id']);
-
-
 
 header("Location: /task_16_1.php");
