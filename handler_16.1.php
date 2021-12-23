@@ -27,10 +27,10 @@ function delete_file($data)
     $sql =("SELECT * FROM `images` WHERE `id`=:id");
     $statement=$pdo->prepare($sql);
     $statement->execute(['id'=>$data]);
-    $result=$statement->fetchALL(PDO::FETCH_ASSOC);
+    $result=$statement->fetch(PDO::FETCH_ASSOC);
 
 
-    $imageUrl = "uploads/".$result[0]['image'];
+    $imageUrl = "uploads/".$result['image'];
 
     if(file_exists($imageUrl)){
 
